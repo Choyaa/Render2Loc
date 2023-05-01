@@ -1,0 +1,112 @@
+{
+"read_xml":
+{
+    "xml_dir" : "/media/victor/X/colmap_exp/XResult-A3-AT_fytd.xml",
+    "num_group" : 5,  
+    "Camera_models" : "FULL_OPENCV", 
+    "camera_path" : "./colmap/cameras.txt",
+    "image_path" : "./colmap/images.txt",
+    "points_path" : "./colmap/points3D.txt",
+    "simplepoints_path" : "./colmap/simplepoints3D.txt", 
+    "sample_sacle" : 1,
+    "prefix_word" : "db/",
+    "flag" : 0
+},
+
+"video_extraction":
+{
+    "input" : "./data/video/DJI_20220718180935_0002_Z.MP4",
+    "output" : "./results/images",
+    "Filename" : "./data/SRT/DJI_20220718180935_0002_Z.txt",
+    "intrinsics_save_path" : "./results/intrinsics.txt",
+    "start" : 0,   
+    "end" : 300, 
+    "fre" : 1
+},
+
+"GPS_extraction":
+{
+    "input": "./data/SRT/DJI_20220718180935_0002_Z.txt",
+    "fre" : 1,
+    "save_path" : "./results/gps_result.txt",
+    "start": 0,
+    "end":300
+},
+
+"render_from_obj":
+{
+    "input_recons" : "./data/3Dmodel/ground",
+    "origin_coord" : [445613.9, 4611391.76, 0.0],
+    "save_path" : "./results/render_reference/",
+    "depth_path" : "./results/cheng/depth.h5",
+    "input_pose" : "./results/cheng/pose.txt"
+},
+
+"read_phoneRTK":
+{
+    "sequence_name" : ["phone_night4", "phone_night3", "phone_night2","phone_night1", "phone_day3", "phone_day2", "phone_day1"],
+    "rtk_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/phone_rtk/rtk.csv", 
+    "csv_save_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/phone_rtk/" ,
+    "file_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/query_pic/constructed_pic/"
+},
+"read_queryGT":
+{
+    "sequence_name" : ["phone_night4", "phone_night3", "phone_night2","phone_night1", "phone_day3", "phone_day2", "phone_day1", "uav_day2", "uav_day1","uav_night2", "uav_night1"],
+    "save_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/queries_gt/gt/",
+    "input_path_xml" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/query_pic/2-gt/Block_1126+300_QUERY_GT_ALL - export.xml",
+    "image_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/query_pic/constructed_pic/" 
+},
+"read_queryPrior":
+{
+    "sequence_name" : [ "phone_day1"],
+    "img_list" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/query_pic/constructed_pic/" ,
+    "save_txt_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/prior_txt/",
+    "raw_prior_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/iphone_prior_raw/",
+    "save_colmap_prior_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/prior_colmap/"
+}, 
+"read_uavPrior":
+{
+    "sequence_name" : ["uav_night1", "uav_night2", "uav_day1", "uav_day2"],
+    "input_path_xml" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/iphone_prior_raw/Block_143_DJI_PRIOR - export.xml",
+    "image_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/query_pic/constructed_pic/" ,
+    "save_colmap_prior_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/prior/"
+    
+},
+"add_seed":
+{
+    "dsm_file" : "/home/ubuntu/Documents/1-pixel/1-jinxia/拍摄1126/map_obj/DSM1/DSM1_DSM_merge.tif",
+    "save_seed_filepath" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/prior/",
+    "sequence_colmap_path" : "/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/AirLoc/sup/2_prior/prior_colmap/"
+  
+},
+"render2loc":
+{
+    "model_ckpt":"./weights/outdoor_ds.ckpt",
+    "images_path":"./AirLoc/images/images_upright/",
+    "render_path":"./AirLoc/images/render_upright/",
+
+    "sequence":"UAV/day/sequence1/",
+    "query_camera":"./AirLoc/queries_intrinsics/que/dj_day1_intrinsics.txt",  
+    "render_camera":"./AirLoc/queries_intrinsics/que/dj_day1_intrinsics_render.txt",
+    "render_pose":"./AirLoc/sensors_prior/seed/dj_day1_seed.txt",
+    "results":"./results_find_reason/UAV_day_sequence1/",  
+    "blender_intrinscs":[5472, 3648, 24],
+    "blender_path": "/home/ubuntu/Downloads/blender-3.3.1-linux-x64/blender",
+    "rgb_path":"/home/ubuntu/Documents/1-pixel/render/blender_demo/queriess.blend",
+    "depth_path":"/home/ubuntu/Documents/1-pixel/render/blender_demo/depth_render.blend",
+    "python_rgb_path":"/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/lib/dji_rgb.py",
+    "python_depth_path":"/home/ubuntu/Documents/1-pixel/1-jinxia/icme_relocalization/lib/dji_depth.py",
+    "iteration_nums":1,
+    "aborlation": "fix_yaw", 
+
+    
+
+
+    "query_pth":"5472 3648 24,,,",
+    "input_recons" : "./data/3Dmodel/ground",
+    "origin_coord" : [445613.9, 4611391.76, 0.0],
+    "save_path" : "./results/loc2render/"
+}
+}
+
+
