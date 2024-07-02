@@ -74,7 +74,7 @@ The `Render-and-Compare` framework requires a configuration file to set up the n
 Make sure to customize the configuration file according to your specific file system structure and the locations where you have stored the necessary Blender executable and Python scripts.
 
 ## Usage
-![image](https://github.com/Choyaa/Render2loc/asserts/pipeline.png)
+![image](https://github.com/Choyaa/Render2loc/../../../../asserts/pipeline.png)
 
 The `Render-and-Compare` framework follows a general pipeline for cross-view 6-DoF localization. Here's a simplified outline of the process, integrated with the steps from the general pipeline:
 
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
 This streamlined workflow encapsulates the general pipeline within the usage instructions, providing a clear path from initialization to execution of the localization process. Adjustments may be necessary based on sensor noise levels and the specifics of the query images and prior poses.
 ## Dataset
-![image](https://github.com/Choyaa/Render2loc/asserts/dataset.png)
+![image](https://github.com/Choyaa/Render2loc/../../../../asserts/dataset.png)
 
 The **AirLoc Dataset** is a comprehensive dataset designed for evaluating cross-view 6-DoF localization algorithms. It features a large urban area, capturing the complexities of modern cityscapes with diverse structures, roads, and natural elements.
 
