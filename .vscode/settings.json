@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "cameramanipulator": "cpp",
+        "modellayer": "cpp",
+        "viewpoint": "cpp"
+    }
+}

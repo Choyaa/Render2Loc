@@ -1,0 +1,79 @@
+default: &default
+    class: 'SuperGlue'
+    weights: 'outdoor'
+    sinkhorn_iterations: 20
+    nms_radius: 4
+    match_threshold: 0.2
+example:
+    <<: *default
+    match_threshold: 0.5
+    imsize: -1
+hpatch:
+    <<: *default
+    max_keypoints: 1024
+    imsize: -1 
+
+inloc:
+    <<: *default
+    sinkhorn_iterations: 50
+    max_keypoints: 4096
+    imsize: 1600
+    pairs: 'pairs-query-netvlad40-temporal.txt' 
+    rthres: 48
+    skip_matches: 20
+airloc:
+    <<: *default
+    sinkhorn_iterations: 50
+    match_threshold: 0.2
+    max_keypoints: 4096
+    nms_radius: 3
+    imsize: 1600
+    pairs: ['pairs-db-covis20.txt', 'pairs-query-netvlad50.txt']
+    qt_dthres: 0
+    qt_psize: 0
+    qt_unique: False
+    ransac_thres: [12]
+    sc_thres: 0.2
+    covis_cluster: False
+aachen:
+    <<: *default
+    sinkhorn_iterations: 50
+    match_threshold: 0.0
+    max_keypoints: 4096
+    nms_radius: 3
+    imsize: 1024
+    pairs: ['pairs-db-covis20.txt', 'pairs-query-netvlad50.txt']
+    qt_dthres: 0
+    qt_psize: 0
+    qt_unique: False
+    ransac_thres: [12]
+    sc_thres: 0.2
+    covis_cluster: False
+aachen_v1.1:
+    <<: *default
+    sinkhorn_iterations: 50
+    match_threshold: 0.0
+    max_keypoints: 4096
+    nms_radius: 3
+    imsize: 1024
+    pairs: ['pairs-db-covis20.txt', 'pairs-query-netvlad50.txt']
+    qt_dthres: 0
+    qt_psize: 0
+    qt_unique: False
+    ransac_thres: [12]
+    sc_thres: 0.2
+    covis_cluster: False
+robotcar:
+    <<: *default
+    sinkhorn_iterations: 50
+    match_threshold: 0.0
+    max_keypoints: 4096
+    nms_radius: 3
+    imsize: 1024
+    pairs: ['pairs-db-covis20.txt', 'pairs-query-netvlad20-percam-perloc.txt']
+    qt_dthres: 0
+    qt_psize: 0
+    qt_unique: False
+    ransac_thres: [12]
+    sc_thres: 0.2
+    covis_cluster: False

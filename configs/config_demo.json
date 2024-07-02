@@ -1,0 +1,53 @@
+{
+    "render2loc": {
+        "dev": "phone",
+        "iter": 2,
+        "engine": "blender",
+        "model_ckpt": "./weights/outdoor_ds.ckpt",
+        "render_images": "images/render_upright/",
+        "datasets": "/home/ubuntu/Documents/code/github/Render2loc/datasets/demo",
+        "prior_pose": "sensors_prior/prior_pose.txt",
+        "dsm_file": "texture_model/DSM.tif",
+        "render_poses": "results/seed_pose.txt",
+        "query_camera": "queries/query_intrinsics.txt",
+        "render_camera": "queries/query_intrinsics.txt",
+        "distortion": [
+            0.293656243361741,
+            -1.13028438807054,
+            0.000113131446409535,
+            5.29911015250079e-05,
+            1.24340747827876
+        ],
+        "results": "results/"
+    },
+    "blender": {
+        "blender_path": "/home/ubuntu/Downloads/blender-3.3.1-linux-x64/blender",
+        "texture_path": "texture_model",
+        "rgb_path": "texture_model/reference_rgb.blend",
+        "depth_path": "texture_model/reference.blend",
+        "origin": "texture_model/metadata.xml",
+        "input_recons": "texture_model/Data",
+        "python_rgb_path": "/home/ubuntu/Documents/code/github/Render2loc/utils/blender/RGB_renderer.py",
+        "python_depth_path": "/home/ubuntu/Documents/code/github/Render2loc/utils/blender/depth_renderer.py",
+        "python_importObjs_rgb_path": "/home/ubuntu/Documents/code/github/Render2loc/utils/blender/RGB_obj_importer.py",
+        "python_importObjs_depth_path": "/home/ubuntu/Documents/code/github/Render2loc/utils/blender/depth_obj_importer.py",
+        "f_mm": 0,
+        "sensor_width": 5.56,
+        "sensor_height": 7.41,
+        "iteration_nums": 4,
+        "aborlation": "fix_yaw"
+    },
+    "localize_render2loc": {
+        "results": "./results/airloc/",
+        "loc": {
+            "estimation": {
+                "ransac": {
+                    "max_error": 12
+                }
+            }
+        }
+    },
+    "evaluate": {
+        "gt_pose": "gt_pose/gt_pose.txt"
+    }
+}
