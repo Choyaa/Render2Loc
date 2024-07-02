@@ -74,7 +74,9 @@ The `Render-and-Compare` framework requires a configuration file to set up the n
 Make sure to customize the configuration file according to your specific file system structure and the locations where you have stored the necessary Blender executable and Python scripts.
 
 ## Usage
-![image](asserts/pipeline.jpg)
+<p align="center">
+  <a href="https://github.com/Choyaa/Render2loc"><img src="asserts/pipeline.png" width="60%"/></a>
+</p>
 
 The `Render-and-Compare` framework follows a general pipeline for cross-view 6-DoF localization. Here's a simplified outline of the process, integrated with the steps from the general pipeline:
 
