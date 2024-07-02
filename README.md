@@ -125,7 +125,10 @@ if __name__ == "__main__":
 
 This streamlined workflow encapsulates the general pipeline within the usage instructions, providing a clear path from initialization to execution of the localization process. Adjustments may be necessary based on sensor noise levels and the specifics of the query images and prior poses.
 ## Dataset
-![image](asserts/dataset.png)
+<p align="center">
+  <a href="https://github.com/Choyaa/Render2loc"><img src="asserts/dataset.png" width="80%"/></a>
+</p>
+<br/>
 
 The **AirLoc Dataset** is a comprehensive dataset designed for evaluating cross-view 6-DoF localization algorithms. It features a large urban area, capturing the complexities of modern cityscapes with diverse structures, roads, and natural elements.
 
