@@ -1,13 +1,7 @@
----
-noteId: "569b13502e3611efb6bb53f101bd6eb9"
-tags: []
-
----
 # Render-and-Compare: Cross-view 6-DoF Localization from Noisy Prior
 
-This repository provides the implementation of the "Render-and-Compare: Cross-view 6-DoF Localization from Noisy Prior" as presented in the ICME 2023 paper by Shen Yan et al. from the National University of Defense Technology, ChangSha, China.
+This repository provides the implementation of the "Render-and-Compare: Cross-view 6-DoF Localization from Noisy Prior" as presented in the ICME 2023 paper by Shen Yan et al. from the National University of Defense Technology.
 
-![demo_vid](assets/loftr-github-demo.gif)
 ## Overview
 
 The `Render-and-Compare` framework is designed to address the challenge of 6-DoF (six degrees of freedom) visual localization across different views, particularly from aerial to ground perspectives. Unlike traditional ground-level visual localization, this method leverages an iterative render-and-compare pipeline to enhance algorithm robustness, even when starting from noisy initial priors.
@@ -58,20 +52,19 @@ The `Render-and-Compare` framework requires a configuration file to set up the n
 ```json
 {
     "render2loc": {
-        "dev": "phone", //phone or UAV
-        "iter": 1, // iterations
-        "datasets": "/path/to/your/datasets/demo",  // Ensure this path points to your dataset directory
-        ...
+        "dev": "phone", 
+        "iter": 1, 
+        "datasets": "/path/to/your/datasets/demo",  
+
     },
     "blender": {
-        "blender_path": "/path/to/your/blender-3.3.1-linux-x64/blender",  // Update this to the path where Blender is installed
-        "python_rgb_path": "/path/to/your/utils/blender/RGB_renderer.py",  // Update this to the path of your RGB rendering Python script
-        "python_depth_path": "/path/to/your/utils/blender/depth_renderer.py",  // Update this to the path of your depth rendering Python script
-        "python_importObjs_rgb_path": "/path/to/your/utils/blender/RGB_obj_importer.py",// Path to your custom Python script for importing 3D objects for RGB rendering
-        "python_importObjs_depth_path": "/path/to/your/utils/blender/depth_obj_importer.py",// Path to your custom Python script for importing 3D objects for depth rendering
-        ...
+        "blender_path": "/path/to/your/blender-3.3.1-linux-x64/blender",
+        "python_rgb_path": "/path/to/your/utils/blender/RGB_renderer.py",  
+        "python_depth_path": "/path/to/your/utils/blender/depth_renderer.py", 
+        "python_importObjs_rgb_path": "/path/to/your/utils/blender/RGB_obj_importer.py",
+        "python_importObjs_depth_path": "/path/to/your/utils/blender/depth_obj_importer.py",
+
     },
-    ...
 }
 ```
 - **Dataset Path**: The `"datasets"` key should be set to the directory where your dataset is located.
@@ -81,10 +74,8 @@ The `Render-and-Compare` framework requires a configuration file to set up the n
 Make sure to customize the configuration file according to your specific file system structure and the locations where you have stored the necessary Blender executable and Python scripts.
 
 ## Usage
-<p align="center">
-  <a href="https://github.com/Choyaa/Render2loc"><img src="asserts/pipeline.png" width="60%"/></a>
-</p>
-<br/>
+![image](https://github.com/Choyaa/Render2loc/asserts/pipeline.png)
+
 The `Render-and-Compare` framework follows a general pipeline for cross-view 6-DoF localization. Here's a simplified outline of the process, integrated with the steps from the general pipeline:
 
 ### Step 1: Initialization
@@ -132,10 +123,8 @@ if __name__ == "__main__":
 
 This streamlined workflow encapsulates the general pipeline within the usage instructions, providing a clear path from initialization to execution of the localization process. Adjustments may be necessary based on sensor noise levels and the specifics of the query images and prior poses.
 ## Dataset
-<p align="center">
-  <a href="https://github.com/Choyaa/Render2loc"><img src="asserts/dataset.png" width="60%"/></a>
-</p>
-<br/>
+![image](https://github.com/Choyaa/Render2loc/asserts/dataset.png)
+
 The **AirLoc Dataset** is a comprehensive dataset designed for evaluating cross-view 6-DoF localization algorithms. It features a large urban area, capturing the complexities of modern cityscapes with diverse structures, roads, and natural elements.
 
 ### Access
