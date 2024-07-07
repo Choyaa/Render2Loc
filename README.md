@@ -72,7 +72,11 @@ The `Render-and-Compare` framework requires a configuration file to set up the n
 - **Python Scripts**: Update the paths for `"python_rgb_path"`, `"python_depth_path"`, `"python_importObjs_rgb_path"` and `"python_importObjs_depth_path"` to the locations of your custom Python scripts for rendering and importing 3D objects. These scripts are essential for the rendering process and must be correctly specified for the framework to function properly.
 
 Make sure to customize the configuration file according to your specific file system structure and the locations where you have stored the necessary Blender executable and Python scripts.
-
+## Run Render2loc demo
+Download the [demo dataset](https://1drv.ms/f/s!Annq4fi6Z184gmgK5KEFVgOft0Yr?e=wAVKn9)(demo.zip), set up the configuration as described above and run the following command:
+```
+python render2loc.py
+```
 ## Usage
 <p align="center">
   <a href="https://github.com/Choyaa/Render2loc"><img src="asserts/pipeline.png" width="60%"/></a>
@@ -86,7 +90,7 @@ Create an instance of the `Render2Loc` class with the path to your configuration
 ```python
 from Render2Loc import Render2Loc
 
-render2loc = Render2Loc('configs/config_demo8.json')
+render2loc = Render2Loc('configs/config_demo.json')
 ```
 
 ### Step 2: Prepare the Environment
@@ -133,7 +137,7 @@ This streamlined workflow encapsulates the general pipeline within the usage ins
 The **AirLoc Dataset** is a comprehensive dataset designed for evaluating cross-view 6-DoF localization algorithms. It features a large urban area, capturing the complexities of modern cityscapes with diverse structures, roads, and natural elements.
 
 ### Access
-The dataset is available on BaiduDesk (access code: !!) and Google Cloud, offering a rich collection of images and data for research and development purposes.
+The dataset is available on [onedrive](https://1drv.ms/f/s!Annq4fi6Z184gmgK5KEFVgOft0Yr?e=wAVKn9)(airloc.zip), offering a rich collection of images and data for research and development purposes.
 
 ### Content
 - **Size**: Approximately 100,000m² of urban area.
